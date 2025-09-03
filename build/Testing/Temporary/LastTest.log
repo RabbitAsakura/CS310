@@ -1,0 +1,99 @@
+Start testing: Sep 03 02:30 UTC
+----------------------------------------------------------
+1/3 Testing: Square root of positive number
+1/3 Test: Square root of positive number
+Command: "/workspaces/CS310/build/unit_tests" "Square root of positive number"
+Directory: /workspaces/CS310/build
+"Square root of positive number" start time: Sep 03 02:30 UTC
+Output:
+----------------------------------------------------------
+Filters: "Square root of positive number"
+Randomness seeded to: 529889892
+Error: Negative input to compute_sqr_root: -25
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+unit_tests is a Catch2 v3.6.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Square root of positive number
+-------------------------------------------------------------------------------
+/workspaces/CS310/tests/math_tests.cpp:5
+...............................................................................
+
+/workspaces/CS310/tests/math_tests.cpp:6: FAILED:
+  REQUIRE( compute_sqr_root(-25.0) == (5.0) )
+with expansion:
+  nan == 5.0
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"Square root of positive number" end time: Sep 03 02:30 UTC
+"Square root of positive number" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: Square root of non-perfect square
+2/3 Test: Square root of non-perfect square
+Command: "/workspaces/CS310/build/unit_tests" "Square root of non-perfect square"
+Directory: /workspaces/CS310/build
+"Square root of non-perfect square" start time: Sep 03 02:30 UTC
+Output:
+----------------------------------------------------------
+Filters: "Square root of non-perfect square"
+Randomness seeded to: 1314893760
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Square root of non-perfect square" end time: Sep 03 02:30 UTC
+"Square root of non-perfect square" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: Square root of negative number
+3/3 Test: Square root of negative number
+Command: "/workspaces/CS310/build/unit_tests" "Square root of negative number"
+Directory: /workspaces/CS310/build
+"Square root of negative number" start time: Sep 03 02:30 UTC
+Output:
+----------------------------------------------------------
+Filters: "Square root of negative number"
+Randomness seeded to: 1526798998
+Error: Negative input to compute_sqr_root: -1
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+unit_tests is a Catch2 v3.6.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Square root of negative number
+-------------------------------------------------------------------------------
+/workspaces/CS310/tests/math_tests.cpp:14
+...............................................................................
+
+/workspaces/CS310/tests/math_tests.cpp:15: FAILED:
+  REQUIRE( compute_sqr_root(-1.0) == -1 )
+with expansion:
+  nan == -1
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"Square root of negative number" end time: Sep 03 02:30 UTC
+"Square root of negative number" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 03 02:30 UTC
