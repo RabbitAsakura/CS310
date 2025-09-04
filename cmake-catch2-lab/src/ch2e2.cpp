@@ -4,7 +4,7 @@ using namespace std;
 
 class Person
 {
-    private:
+    protected:
         int age;
         string name;
     public:
@@ -23,15 +23,19 @@ class Person
         }
 };
 
-class Employee: private Person
+class Employee: public Person
 {
+    private:
+         double salary;
     public:
-        Employee(string n, int a):
-        {
-            name = n;
-            age = a;
-        }
+        Employee(string n, int a): Person(n,a), salary(0){}
         void work() const{ cout << "Performs tasks!" << endl;};
+        
+        void display()
+        {
+            Person::display(); 
+            std::cout << ".\t Salary: " << salary << std::endl;
+        }
 };
 
 int main()
@@ -43,7 +47,8 @@ int main()
     cout << " Employee's new name is: " << employee.getName() << endl;
 
     //Example 2
-    Employee emp1 = new Employee();
+    Employee emp1("John Smith", 24);
     emp1.setName("Alice");
+    emp1.display();
     return 0;
 }
