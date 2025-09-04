@@ -34,7 +34,7 @@ class Employee: public Person
         void display()
         {
             Person::display(); 
-            std::cout << ".\t Salary: " << salary << std::endl;
+            std::cout << ",\t Salary: " << salary << std::endl;
         }
 };
 
@@ -44,7 +44,7 @@ int main()
     Person employee("Alice",27);
     employee.display();
     employee.setName("Alicia");
-    cout << " Employee's new name is: " << employee.getName() << endl;
+    cout << "Employee's new name is: " << employee.getName() << endl;
 
     //Example 2
     Employee emp1("John Smith", 24);
