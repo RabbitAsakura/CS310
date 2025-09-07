@@ -34,7 +34,7 @@ add_library(core
   src/student.cpp
   src/instructor.cpp
 )
-target_include_directories(core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_include_directories(core PUBLIC ${lab1.2}/src)
 target_link_libraries(core PUBLIC nlohmann_json::nlohmann_json yaml-cpp)
 
 add_executable(app src/main.cpp)

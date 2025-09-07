@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/workspaces/CS310/cmake-catch2-lab"
+    "cmake.sourceDirectory": "/workspaces/CS310/cmake-catch2-lab",
+    "C_Cpp.errorSquiggles": "enabled"
 }
