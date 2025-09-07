@@ -18,7 +18,7 @@ FetchContent_Declare(catch2 GIT_REPOSITORY https://github.com/catchorg/Catch2.gi
 FetchContent_MakeAvailable(catch2)
 
 add_library(core src/person.cpp src/student.cpp src/instructor.cpp)
-target_include_directories(core PUBLIC ${lab1.2}/src)
+target_include_directories(core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_link_libraries(core PUBLIC nlohmann_json::nlohmann_json yaml-cpp)
 
 add_executable(app src/main.cpp)

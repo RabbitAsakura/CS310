@@ -1,7 +1,0 @@
-add_test( [==[Square root of positive number]==] /workspaces/CS310/build/unit_tests [==[Square root of positive number]==]  )
-set_tests_properties( [==[Square root of positive number]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS310/build)
-add_test( [==[Square root of non-perfect square]==] /workspaces/CS310/build/unit_tests [==[Square root of non-perfect square]==]  )
-set_tests_properties( [==[Square root of non-perfect square]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS310/build)
-add_test( [==[Square root of negative number]==] /workspaces/CS310/build/unit_tests [==[Square root of negative number]==]  )
-set_tests_properties( [==[Square root of negative number]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS310/build)
-set( unit_tests_TESTS [==[Square root of positive number]==] [==[Square root of non-perfect square]==] [==[Square root of negative number]==])
