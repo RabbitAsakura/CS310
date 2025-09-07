@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "includePath": [
+        "${workspaceFolder}/lab1.2/src",
+        "${workspaceFolder}/lab1.2/build/_deps/json-src/single_include",
+        "${workspaceFolder}/lab1.2/build/_deps/yaml-cpp-src/include",
+        "${workspaceFolder}/lab1.2/build/_deps/json-src/include",
+        "${workspaceFolder}/lab1.2/build/_deps/yaml-cpp-build/include",
+        "/usr/include",
+        "/usr/local/include"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "c17",
+      "cppStandard": "c++20",
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ],
+  "version": 4
+}
