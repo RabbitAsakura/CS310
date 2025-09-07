@@ -1,14 +1,14 @@
-Start testing: Sep 07 19:23 UTC
+Start testing: Sep 07 19:44 UTC
 ----------------------------------------------------------
-1/4 Testing: Student JSON serialization
-1/4 Test: Student JSON serialization
+1/5 Testing: Student JSON serialization
+1/5 Test: Student JSON serialization
 Command: "/workspaces/CS310/lab1.2/build/tests" "Student JSON serialization"
 Directory: /workspaces/CS310/lab1.2/build
-"Student JSON serialization" start time: Sep 07 19:23 UTC
+"Student JSON serialization" start time: Sep 07 19:44 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Student JSON serialization"
-Randomness seeded to: 762559149
+Randomness seeded to: 1508804593
 ===============================================================================
 All tests passed (3 assertions in 1 test case)
 
@@ -16,19 +16,55 @@ All tests passed (3 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Student JSON serialization" end time: Sep 07 19:23 UTC
+"Student JSON serialization" end time: Sep 07 19:44 UTC
 "Student JSON serialization" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/4 Testing: Instructor YAML serialization
-2/4 Test: Instructor YAML serialization
+2/5 Testing: Student JSON serialization with invalid fields
+2/5 Test: Student JSON serialization with invalid fields
+Command: "/workspaces/CS310/lab1.2/build/tests" "Student JSON serialization with invalid fields"
+Directory: /workspaces/CS310/lab1.2/build
+"Student JSON serialization with invalid fields" start time: Sep 07 19:44 UTC
+Output:
+----------------------------------------------------------
+Filters: "Student JSON serialization with invalid fields"
+Randomness seeded to: 1299548056
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tests is a Catch2 v3.6.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Student JSON serialization with invalid fields
+-------------------------------------------------------------------------------
+/workspaces/CS310/lab1.2/tests/test_serialization.cpp:14
+...............................................................................
+
+/workspaces/CS310/lab1.2/tests/test_serialization.cpp:14: FAILED:
+due to unexpected exception with message:
+  grad_year too small
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"Student JSON serialization with invalid fields" end time: Sep 07 19:44 UTC
+"Student JSON serialization with invalid fields" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: Instructor YAML serialization
+3/5 Test: Instructor YAML serialization
 Command: "/workspaces/CS310/lab1.2/build/tests" "Instructor YAML serialization"
 Directory: /workspaces/CS310/lab1.2/build
-"Instructor YAML serialization" start time: Sep 07 19:23 UTC
+"Instructor YAML serialization" start time: Sep 07 19:44 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Instructor YAML serialization"
-Randomness seeded to: 3135340037
+Randomness seeded to: 176285867
 ===============================================================================
 All tests passed (2 assertions in 1 test case)
 
@@ -36,19 +72,19 @@ All tests passed (2 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Instructor YAML serialization" end time: Sep 07 19:23 UTC
+"Instructor YAML serialization" end time: Sep 07 19:44 UTC
 "Instructor YAML serialization" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/4 Testing: CSV escaping handles commas and quotes
-3/4 Test: CSV escaping handles commas and quotes
+4/5 Testing: CSV escaping handles commas and quotes
+4/5 Test: CSV escaping handles commas and quotes
 Command: "/workspaces/CS310/lab1.2/build/tests" "CSV escaping handles commas and quotes"
 Directory: /workspaces/CS310/lab1.2/build
-"CSV escaping handles commas and quotes" start time: Sep 07 19:23 UTC
+"CSV escaping handles commas and quotes" start time: Sep 07 19:44 UTC
 Output:
 ----------------------------------------------------------
 Filters: "CSV escaping handles commas and quotes"
-Randomness seeded to: 3670116461
+Randomness seeded to: 3007632667
 ===============================================================================
 All tests passed (1 assertion in 1 test case)
 
@@ -56,28 +92,28 @@ All tests passed (1 assertion in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"CSV escaping handles commas and quotes" end time: Sep 07 19:23 UTC
+"CSV escaping handles commas and quotes" end time: Sep 07 19:44 UTC
 "CSV escaping handles commas and quotes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/4 Testing: Validation throws on bad email
-4/4 Test: Validation throws on bad email
+5/5 Testing: Validation throws on bad email
+5/5 Test: Validation throws on bad email
 Command: "/workspaces/CS310/lab1.2/build/tests" "Validation throws on bad email"
 Directory: /workspaces/CS310/lab1.2/build
-"Validation throws on bad email" start time: Sep 07 19:23 UTC
+"Validation throws on bad email" start time: Sep 07 19:44 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Validation throws on bad email"
-Randomness seeded to: 1794588004
+Randomness seeded to: 1326015036
 ===============================================================================
 All tests passed (1 assertion in 1 test case)
 
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Validation throws on bad email" end time: Sep 07 19:23 UTC
+"Validation throws on bad email" end time: Sep 07 19:44 UTC
 "Validation throws on bad email" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 07 19:23 UTC
+End testing: Sep 07 19:44 UTC
