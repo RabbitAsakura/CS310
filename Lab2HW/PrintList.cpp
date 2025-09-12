@@ -1,4 +1,7 @@
 #include <fstream>
+#include "ItemType.h"
+#include "unsorted.h"
+using namespace std;
 
 void PrintList(ofstream& dataFile, UnsortedType& list)
 // Pre:  list has been initialized.

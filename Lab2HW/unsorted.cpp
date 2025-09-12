@@ -1,5 +1,23 @@
 #include "unsorted.h"
 
+class UnsortedType
+{
+public:
+  UnsortedType();
+  bool IsFull() const;
+  int GetLength() const;
+  ItemType GetItem(ItemType item, bool& found);
+  bool MakeEmpty();
+  void PutItem(ItemType item);
+  void DeleteItem(ItemType item);
+  void ResetList();
+  ItemType GetNextItem();
+private:
+  int length;
+  ItemType info[MAX_ITEMS];
+  int currentPos;
+};
+
 UnsortedType::UnsortedType()
 {
   length = 0;
@@ -40,10 +58,11 @@ ItemType UnsortedType::GetItem(ItemType item, bool& found)
   }
   return item;
 }
-void UnsortedType::MakeEmpty()
+bool UnsortedType::MakeEmpty()
 // Post: list is empty.
 {
   length = 0;
+  return true;
 }
 void UnsortedType::PutItem(ItemType item)
 // Post: item is in the list.
