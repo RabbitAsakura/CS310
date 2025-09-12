@@ -1,3 +1,5 @@
+#ifndef UNSORTED_H
+#define UNSORTED_H
 #include "ItemType.h" 
 #include <iostream>
 // File ItemType.h must be provided by the user of this class. 
@@ -127,3 +129,4 @@ private:
   int capacity;
 };
 
+#endif

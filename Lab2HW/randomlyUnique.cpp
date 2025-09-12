@@ -5,6 +5,7 @@
 #include "unsorted.h"
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main()
@@ -14,19 +15,31 @@ int main()
 
     while(!list.IsFull())
     {
-        int number = rand() % 100;
-        item.Initialize(number);
-        bool found = false;
+        int num = rand() % 100;
+        item.Initialize(num);
+        bool found;
         list.GetItem(item, found);
-        if(!found){
+        if(!found)
+        {
             list.PutItem(item);
         }
     }
+
     list.ResetList();
     for(int i = 0; i < list.GetLength(); i++)
     {
         ItemType temp = list.GetNextItem();
         temp.Print(cout);
         cout << " ";
+
+    if((i+1) % 10 == 0)
+    {
+        std::cout << std::endl;
+    }
+}
+
+    if(list.GetLength() % 10 != 0)
+    {
+        std::cout << std::endl;
     }
 }
