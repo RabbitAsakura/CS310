@@ -9,31 +9,24 @@ using namespace std;
 
 int main()
 {
-    ItemType item;
-    int randomNumber = rand() % 100;
     UnsortedType list;
+    ItemType item;
 
-    for(int i = 0; i < list.GetLength(); i++)
+    while(!list.IsFull())
     {
-        item.Initialize(randomNumber);
-        ItemType foundItem;
+        int number = rand() % 100;
+        item.Initialize(number);
         bool found = false;
         list.GetItem(item, found);
-        if(found)
-        {
-            list.DeleteItem(item);
-        }
-        if(list.IsFull())
-        {
-            break;
+        if(!found){
+            list.PutItem(item);
         }
     }
-
+    list.ResetList();
     for(int i = 0; i < list.GetLength(); i++)
     {
         ItemType temp = list.GetNextItem();
         temp.Print(cout);
         cout << " ";
     }
-
 }
