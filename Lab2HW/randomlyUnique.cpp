@@ -1,10 +1,11 @@
 //Jakobe McPhail
 //09/12/25
 //Data Structures
-#include "unsorted.h"
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "unsorted.h"
 using namespace std;
 
 int main()
@@ -22,7 +23,7 @@ int main()
         bool found = false;
         
         // Note: GetItem for linked list takes ItemType& (reference)
-        ItemType searchItem = item;  // Make a copy for searching
+        ItemType searchItem = item; 
         list.GetItem(searchItem, found);
         
         if(!found) {
