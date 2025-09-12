@@ -1,75 +1,59 @@
 #include "unsorted.h"
 
-UnsortedType::UnsortedType()
-{
-  length = 0;
-  currentPos = -1;
+UnsortedType::UnsortedType(int MAX_ITEMS) {
+    capacity = MAX_ITEMS;
+    info = new ItemType[capacity];
+    length = 0;
+    currentPos = -1;
 }
 
-bool UnsortedType::IsFull() const
-{
-  return (length == MAX_ITEMS);
+bool UnsortedType::MakeEmpty() {
+    length = 0;
+    return true;
 }
 
-int UnsortedType::GetLength() const
-{
-  return length;
+bool UnsortedType::IsFull() const {
+    return length == capacity;
 }
 
-ItemType UnsortedType::GetItem(ItemType item, bool& found) 
-{
-  bool moreToSearch;
-  int location = 0;
-  found = false;
+int UnsortedType::GetLength() const {
+    return length;
+}
 
-  moreToSearch = (location < length);
-
-  while (moreToSearch && !found) 
-  {
-    switch (item.ComparedTo(info[location]))
-    {
-      case LESS    : 
-      case GREATER : location++;
-                     moreToSearch = (location < length);
-                     break;
-      case EQUAL   : found = true;
-                     item = info[location];
-                     break;
+ItemType UnsortedType::GetItem(ItemType item, bool& found) {
+    found = false;
+    for (int i = 0; i < length; i++) {
+        if (info[i].ComparedTo(item) == EQUAL) {
+            found = true;
+            return info[i];
+        }
     }
-  }
-  return item;
+    return item;
 }
 
-bool UnsortedType::MakeEmpty()
-{
-  length = 0;
-  return true;
+void UnsortedType::PutItem(ItemType item) {
+    if (length < capacity) {
+        info[length++] = item;
+    }
 }
 
-void UnsortedType::PutItem(ItemType item)
-{
-  info[length] = item;
-  length++;
+void UnsortedType::DeleteItem(ItemType item) {
+    for (int i = 0; i < length; i++) {
+        if (info[i].ComparedTo(item) == EQUAL) {
+            for (int j = i; j < length - 1; j++) {
+                info[j] = info[j + 1];
+            }
+            length--;
+            return;
+        }
+    }
 }
 
-void UnsortedType::DeleteItem(ItemType item)
-{
-  int location = 0;
-
-  while (item.ComparedTo(info[location]) != EQUAL)
-    location++;
-
-  info[location] = info[length - 1];
-  length--;
+void UnsortedType::ResetList() {
+    currentPos = -1;
 }
 
-void UnsortedType::ResetList()
-{
-  currentPos = -1;
-}
-
-ItemType UnsortedType::GetNextItem()
-{
-  currentPos++;
-  return info[currentPos];
+ItemType UnsortedType::GetNextItem() {
+    currentPos++;
+    return info[currentPos];
 }

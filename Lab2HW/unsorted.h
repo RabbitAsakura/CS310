@@ -6,7 +6,7 @@
 class UnsortedType 
 {
 public:
-  UnsortedType();
+  UnsortedType(int MAX_ITEMS = 50);
   bool IsFull() const;
   int GetLength() const;
   ItemType GetItem(ItemType item, bool& found);
@@ -18,8 +18,9 @@ public:
 
 private:
   int length;
-  ItemType info[MAX_ITEMS];
+  ItemType* info;
   int currentPos;
+  int capacity;
 };
 
 #endif
