@@ -1,3 +1,7 @@
+#ifndef CH3E1_H
+#define CH3E1_H
+#include <iostream>
+
 class ItemType
 {
     public:
@@ -38,7 +42,7 @@ class UnsortedList{
     }
 
         void Insert(ItemType item){
-            if(length < MAX_ITEMS){
+            if(length < capacity){
                 data[length++] = item;
             }
         }
@@ -52,7 +56,7 @@ class UnsortedList{
         }
 
         bool isFull(){
-            return length == MAX_ITEMS;
+            return length == capacity;
         }
 
         void ResetList(){
@@ -77,3 +81,5 @@ class UnsortedList{
             }
         }
 };
+
+#endif
