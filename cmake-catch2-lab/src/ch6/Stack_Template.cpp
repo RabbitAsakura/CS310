@@ -23,4 +23,26 @@ class ArrayStack
             }
         }
 
+        T pop()
+        {
+            if(top < 0)
+            {
+                throw std::underflow_error("Stack underflow");
+            }
+            else
+            {
+                return data[top--];
+            }
+        }
+
+        bool isFull() const
+        {
+            return top == Capacity - 1;
+        }
+
+        bool isEmpty() const
+        {
+            return top == -1;
+        }
+
 };
