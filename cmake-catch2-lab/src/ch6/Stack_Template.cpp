@@ -44,5 +44,10 @@ class ArrayStack
         {
             return top == -1;
         }
-
 };
+
+
+int main()
+{
+    ArrayStack<int, 5> intStack;
+}
