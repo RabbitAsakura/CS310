@@ -46,7 +46,6 @@ class ArrayStack
         }
 };
 
-
 int main()
 {
     ArrayStack<int, 5> intStack;
