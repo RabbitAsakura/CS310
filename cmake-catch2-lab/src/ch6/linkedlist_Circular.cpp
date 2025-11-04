@@ -5,7 +5,8 @@
 /*
 * H -> [1] -> [2] -> [3] -> [1]
 */
-
+#include <iostream>
+using namespace std;
 template <typename T>
 class CircularLinkedList
 {
@@ -95,10 +96,27 @@ class CircularLinkedList
                 previous = current;
                 current = current->next;
             }
-            if(!current) throw std::underflow_error("Value not found");
+            if(!current) throw std::runtime_error("Value not found");
             if(current == head)
             {
                 head = head->next;
             }
+            
         }
 };
+
+int main(int argc, char* argv[])
+{
+    CircularLinkedList<int> list;
+    list.InsertAtFront(1);
+    list.InsertAtFront(2);
+    list.InsertAtFront(3);
+    list.InsertAtFront(4);
+    list.InsertAtEnd(10);
+    list.InsertAtEnd(20);
+
+    std::cout << list.DeleteAtFront() << std::endl;
+    std::cout << list.DeleteAtFront() << std::endl;
+    std::cout << list.DeleteAtFront() << std::endl;
+    std::cout << list.Delete(10) << std::endl;
+}
