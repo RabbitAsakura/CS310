@@ -176,3 +176,8 @@ bool hasCycle(DDLNode* head)
     }
     return false;
 }
+
+int main()
+{
+    
+}
