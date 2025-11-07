@@ -13,6 +13,7 @@ class Stack
     Stack() : top(-1) {}
     bool push(int x);
     int pop();
+    void display() const;
     int peek() const;
     bool isEmpty() const;
     bool isFull() const;
@@ -29,6 +30,61 @@ class minStack
     int getMin() const;
 
 };
+
+void minStack::push(int x)
+{
+    s.push(x);
+    if(minS.isEmpty() || x <= minS.peek())
+    {
+        minS.push(x);
+    }
+}
+
+int minStack::pop()
+{
+    int val = s.pop();
+    if(val == minS.peek())
+    {
+        minS.pop();
+    }
+    return val;
+}
+
+int minStack::getMin() const
+{
+    if(minS.isEmpty())
+    {
+        throw runtime_error("Stack is empty");
+    }
+    return minS.peek();
+}
+
+void Stack::display() const
+{
+    for(int i = top; i >= 0; i--)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+}
+
+bool Stack::isFull() const
+{
+    return top == MAX - 1;
+}
+
+int Stack::peek() const
+{
+    if(isEmpty())
+    {
+        throw runtime_error("Stack is empty");
+    }
+    return arr[top];
+}
+bool Stack::isEmpty() const
+{
+    return top == -1;
+}
 
 bool Stack::push(int x)
 {
@@ -57,10 +113,9 @@ void nextGreater(int arr[], int n, int out[])
         while(!s.isEmpty() && s.peek() <= arr[i])
         {
             s.pop();
-            s.push(arr[i]);
         }
-        s.push(arr[i]);
         out[i] = s.isEmpty() ? -1 : s.peek();
+        s.push(arr[i]);
     }
 }
 
@@ -181,10 +236,6 @@ void sortStack(Stack& s)
     {
         s.push(tempStack.pop());
     }
-    while(!s.isEmpty())
-    {
-        tempStack.push(s.pop());
-    }
 }
 
 void stockspan(int price[], int n, int span[])
@@ -199,4 +250,50 @@ void stockspan(int price[], int n, int span[])
         span[i] = s.isEmpty() ? (i + 1) : (i - s.peek());
         s.push(i);
     }
+}
+
+int main()
+{
+    Stack s;
+    minStack ms;
+    /*ms.push(10);
+    ms.push(20);
+    ms.push(5);
+    ms.push(15);
+    cout << "Minimum element: " << ms.getMin() << "\n";*/
+    /*int prices[5] = {100, 80, 70 , 60 ,50};
+    int span[5];
+    stockspan(prices, 5, span);
+    for(int i = 0; i < 5; i++)
+    {
+        cout << span[i] << " ";
+    }
+    cout << "\n";*/
+    
+    //balanced("{[()]}") ? cout << "Balanced\n" : cout << "Not Balanced\n";
+    const char* infix = "A+B*(C-D)/E";
+    char postfix[100];
+    infixToPostfix(infix, postfix);
+    cout << "Infix expression: " << infix << "\n";
+    cout << "Postfix expression: " << postfix << "\n";
+    /*s.push(100);
+    s.push(20);
+    s.push(45);
+    s.push(1);
+    s.push(78);
+    sortStack(s);
+    s.display();*/
+    //std::cout << "Postfix Evaluation: " << evalPostfix("231*+9-") << "\n";
+    //s.push(10);
+    //s.push(20);
+    //s.display();
+    /*int arr[6] = {4,5,2,1,7,8};
+    int out[6];
+    nextGreater(arr, 6, out);
+    std::cout << "Next Greater Elements: ";
+    for(int i = 0; i < 6; i++)
+    {
+        std::cout << out[i] << " ";
+    }
+    std::cout << "\n";*/
 }

@@ -11,13 +11,13 @@ struct CLLNode
     CLLNode(int v) : val(v), next(nullptr) {}
 };
 
-void insertTail(CLLNode*& head, int val)
+void insertHead(CLLNode*& head, int val)
 {
     CLLNode* newNode = new CLLNode(val);
     if(head == nullptr)
     {
-        newNode->next = newNode;
         head = newNode;
+        head->next = head;
     }
     else
     {
@@ -26,8 +26,25 @@ void insertTail(CLLNode*& head, int val)
         {
             tail = tail->next;
         }
-        tail->next = newNode;
         newNode->next = head;
+        tail->next = newNode;
+        head = newNode;
+    }
+}
+
+void insertTail(CLLNode*& tail, int val)
+{
+    CLLNode* newNode = new CLLNode(val);
+    if(tail == nullptr)
+    {
+        tail = newNode;
+        tail->next = tail;
+    }
+    else
+    {
+        newNode->next = tail->next;
+        tail->next = newNode;
+        tail = newNode;
     }
 }
 
@@ -44,51 +61,57 @@ void deleteHead(CLLNode*& head)
     }
     else
     {
-        CLLNode* tail = head;
-        while(tail->next != head)
-        {
-            tail = tail->next;
-        }
-        CLLNode* temp = head;
-        head = head->next;
-        tail->next = head;
-        delete temp;
+        CLLNode* tail = head->next;
+        head->next = tail->next;
+        delete tail;
     }
 }
 
-void deleteTail(CLLNode*& head)
+void deleteTail(CLLNode*& tail)
 {
-    if(head == nullptr)
+    if(tail == nullptr)
     {
         throw runtime_error("List is empty");
     }
-    else if(head->next == head)
+    else if(tail->next == tail)
     {
-        delete head;
-        head = nullptr;
+        delete tail;
+        tail = nullptr;
     }
     else
     {
-        CLLNode* current = head;
-        CLLNode* prev = nullptr;
-        while(current->next != head)
+        CLLNode* current = tail->next;
+        CLLNode* prev = tail;
+        while(current->next != tail)
         {
             prev = current;
             current = current->next;
         }
-        prev->next = head;
+        prev->next = tail;
         delete current;
     }
 }
 
-int josephus(CLLNode* head, int k)
+int josephus(CLLNode*& head, int k)
 {
     if(head == nullptr || k <= 0)
     {
         throw runtime_error("Invalid input");
     }
+    if(head->next == head)
+    {
+        int val = head->val;
+        delete head;
+        head = nullptr;
+        return val;
+    }
     CLLNode* current = head;
     CLLNode* prev = nullptr;
+
+    while(prev->next != head)
+    {
+        prev = prev->next;
+    }
     while(current->next != current)
     {
         for(int i = 1; i < k; i++)
@@ -96,11 +119,20 @@ int josephus(CLLNode* head, int k)
             prev = current;
             current = current->next;
         }
+        if(current == head)
+        {
+            head = head->next;
+        }
         prev->next = current->next;
-        delete current;
+        CLLNode* temp = current;
         current = prev->next;
+        delete temp;
     }
-    return current->val;
+
+    int survivor = head->val;
+    delete head;
+    head = nullptr;
+    return survivor;
 }
 
 pair<CLLNode*, CLLNode*> split(CLLNode* head)
@@ -142,4 +174,72 @@ int cycleLength(CLLNode* head)
         current = current->next;
     }
     return length;
+}
+
+void sortedInsert(CLLNode*& head, int val)
+{
+    CLLNode* newNode = new CLLNode(val);
+    if(head == nullptr)
+    {
+        head = newNode;
+        newNode->next = newNode;
+    }
+    else if(val < head->val)
+    {
+        CLLNode* tail = head;
+        while(tail->next != head)
+        {
+            tail = tail->next;
+        }
+        newNode->next = head;
+        tail->next = newNode;
+        head = newNode;
+    }
+    else
+    {
+        CLLNode* current = head;
+        while(current->next != head && current->next->val < val)
+        {
+            current = current->next;
+        }
+        newNode->next = current->next;
+        current->next = newNode;
+    }
+}
+
+
+int main()
+{
+    CLLNode* head = nullptr;
+    CLLNode* tail = nullptr;
+    sortedInsert(head, 30);
+    sortedInsert(head, 40);
+    sortedInsert(head, 60);
+    sortedInsert(head, 10);
+    for(CLLNode* p = head; p; p = p->next)
+    {
+        cout << p->val << " ";
+        if(p->next == head) break;
+    }
+    cout << "\n";
+
+
+    //cout << "Cycle Length: " << cycleLength(head) << "\n";
+
+    /*auto [head1, head2] = split(head);
+    std::cout << "Split: ";
+    for (CLLNode* p = head1; p; p = p->next)
+    {
+        cout << p->val << " ";
+        if (p->next == head1) break;
+    }
+    cout << " | ";
+    for (CLLNode* p = head2; p; p = p->next)
+    {
+        cout << p->val << " ";
+        if (p->next == head2) break;
+    }
+    cout << "\n";*/
+
+    //std::cout << "Josephus: " << josephus(head, 3) << "\n";
 }

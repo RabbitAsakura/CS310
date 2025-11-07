@@ -12,12 +12,13 @@ struct DDLNode
     DDLNode(int v) : val(v), next(nullptr), prev(nullptr) {}
 };
 
-void insertHead(DDLNode*& head, int val)
+void insertHead(DDLNode*& head,DDLNode*& tail, int val)
 {
     DDLNode* newNode = new DDLNode(val);
     if(head == nullptr)
     {
         head = newNode;
+        tail = newNode;
     }
     else
     {
@@ -43,7 +44,7 @@ void insertTail(DDLNode*& head, DDLNode*& tail,int val)
     }
 }
 
-void deleteHead(DDLNode*& head)
+void deleteHead(DDLNode*& head, DDLNode*& tail)
 {
     if(head == nullptr)
     {
@@ -56,6 +57,10 @@ void deleteHead(DDLNode*& head)
         if(head != nullptr)
         {
             head->prev = nullptr;
+        }
+        else
+        {
+            tail = nullptr;
         }
         delete temp;
     }
@@ -83,7 +88,7 @@ void deleteTail(DDLNode*& head, DDLNode*& t)
     }
 }
 
-void InsertAfter(DDLNode* node, int val)
+void InsertAfter(DDLNode* node, int val, DDLNode*& tail)
 {
     if(node == nullptr)
     {
@@ -97,6 +102,10 @@ void InsertAfter(DDLNode* node, int val)
         if(node->next != nullptr)
         {
             node->next->prev = newNode;
+        }
+        else
+        {
+            tail = newNode;
         }
         node->next = newNode;
     }
@@ -179,5 +188,19 @@ bool hasCycle(DDLNode* head)
 
 int main()
 {
+    DDLNode* head = nullptr;
+    DDLNode* tail = nullptr;
+    insertHead(head, tail, 10);
+    insertHead(head, tail, 20);
+    insertHead(head, tail, 30);
+    insertHead(head, tail, 40);
+    reverse(head, tail);
     
+    for(DDLNode* p = head; p; p = p->next)
+    {
+        std::cout << p->val << " ";
+    }
+    std::cout << "\n";
+
+    hasCycle(head) ? std::cout << "Cycle detected\n" : std::cout << "No cycle\n";
 }

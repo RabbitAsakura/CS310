@@ -2,6 +2,7 @@
 //Data Structures
 #include <iostream>
 #include <stdexcept>
+#include <stack>
 using namespace std;
 
 class Queue
@@ -14,6 +15,7 @@ class Queue
     Queue() : front(0), rear(0) {}
     bool enqueue(int x);
     int dequeue();
+    int size() const;
     int getFront() const;
     bool isEmpty() const;
     bool isFull() const;
@@ -26,6 +28,30 @@ class StackfromQueue
     void push(int x);
     int pop();
 };
+
+int Queue::size() const
+{
+    return (rear - front + MAX) % MAX;
+}
+
+bool Queue::isEmpty() const
+{
+    return front == rear;
+}
+
+int Queue::getFront() const
+{
+    if(isEmpty())
+    {
+        throw runtime_error("Queue is empty");
+    }
+    return arr[front];
+}
+
+bool Queue::isFull() const
+{
+    return (rear + 1) % MAX == front;
+}
 
 bool Queue::enqueue(int x)
 {
@@ -56,7 +82,7 @@ void ReverseK(Queue& q, int k)
         return;
     }
     Queue s;
-    for(int i = 0; i < k && !q.isEmpty(); i++)
+    for(int i = 0; i < k; i++)
     {
         s.enqueue(q.dequeue());
     }
@@ -64,7 +90,7 @@ void ReverseK(Queue& q, int k)
     {
         q.enqueue(s.dequeue());
     }
-    int size = (q.rear - q.front + arr[MAX]) % MAX;
+    int size = q.size();
     for(int i = 0; i < size - k; i++)
     {
         q.enqueue(q.dequeue());
@@ -95,8 +121,9 @@ void levelOrder(treeNode* root)
     q.enqueue(root->val);
     while(!q.isEmpty())
     {
-        int current = q.dequeue();
-        cout << current << " ";
+        treeNode*current = q.getFront();
+        q.dequeue();
+        cout << current->val << " ";
         if(current->left != nullptr)
         {
             q.enqueue(current->left->val);
