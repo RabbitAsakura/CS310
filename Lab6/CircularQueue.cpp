@@ -14,6 +14,7 @@ class CircularQueue
     CircularQueue() : front(0), rear(-1), size(0) {}
     bool enqueue(int x);
     int dequeue();
+    void display() const;
     int getFront() const;
     bool isEmpty() const;
     bool isFull() const;
@@ -29,6 +30,20 @@ bool CircularQueue::enqueue(int x)
     arr[rear] = x;
     size++;
     return true;
+}
+
+void CircularQueue::display() const
+{
+    if(isEmpty())
+    {
+        cout << "Queue is empty\n";
+        return;
+    }
+    for(int i = 0; i < size; i++)
+    {
+        cout << arr[(front + i) % MAX] << " ";
+    }
+    cout << "\n";
 }
 
 int CircularQueue::dequeue()
@@ -98,10 +113,54 @@ int circularTour(int petrol[], int distance[], int n)
     return start;
 }
 
+bool CircularQueue::isEmpty() const
+{
+    return size == 0;
+}
+
+bool CircularQueue::isFull() const
+{
+    return size == MAX;
+}
+
 class LRU
 {
+    CircularQueue q;
+    static const int capacity = 100;
+    static const int size = 10;
+    bool present[capacity];
+    public:
+    LRU()
+    {
+        for(int i = 0; i < size; i++)
+        {
+            present[i] = false;
+        }
+    }
 
-};
+    void reference(int x)
+    {
+        if(x < 0 || x >= capacity)
+        {
+            cout << "Value out of range\n";
+            return;
+        }
+        if(!present[x])
+        {
+            if(q.isFull())
+            {
+                int lru = q.dequeue();
+                present[lru] = false;
+            }
+            q.enqueue(x);
+            present[x] = true;
+        }
+        else
+        {
+            q.dequeue();
+        }
+        }
+    };
 
 void rotate(CircularQueue &q, int k)
 {
@@ -132,6 +191,15 @@ bool isPalindrome(const char* s)
     return true;
 }
 
+int CircularQueue::getFront() const
+{
+    if(isEmpty())
+    {
+        throw runtime_error("Queue is empty");
+    }
+    return arr[front];
+}
+
 void printReverse(CircularQueue &q)
 {
     if(q.isEmpty())
@@ -146,6 +214,17 @@ void printReverse(CircularQueue &q)
 
 int main()
 {
+    CircularQueue q;
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(100);
+    q.display();
+    cout << "\n";
+    cout << "Reverse order: ";
+    printReverse(q);
+    cout << "\n";
+    //isPalindrome("racecar") ? cout << "Palindrome\n" : cout << "Not a palindrome\n";
+    //isPalindrome("hello") ? cout << "Palindrome\n" : cout << "Not a palindrome\n";
     
-
 }

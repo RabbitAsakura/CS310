@@ -153,3 +153,8 @@ void rotateK(LinkedQueue &q, int k)
         q.enqueue(x);
     }
 }
+
+int main()
+{
+    
+}
