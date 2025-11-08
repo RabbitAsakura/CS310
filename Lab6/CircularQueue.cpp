@@ -132,7 +132,7 @@ class LRU
     public:
     LRU()
     {
-        for(int i = 0; i < size; i++)
+        for(int i = 0; i < capacity; i++)
         {
             present[i] = false;
         }
@@ -158,8 +158,15 @@ class LRU
         else
         {
             q.dequeue();
+            q.enqueue(x);
         }
         }
+
+    void display()
+    {
+        q.display();
+        cout << "\n";
+    }
     };
 
 void rotate(CircularQueue &q, int k)
@@ -210,21 +217,4 @@ void printReverse(CircularQueue &q)
     printReverse(q);
     cout << x << " ";
     q.enqueue(x);
-}
-
-int main()
-{
-    CircularQueue q;
-    q.enqueue(10);
-    q.enqueue(20);
-    q.enqueue(30);
-    q.enqueue(100);
-    q.display();
-    cout << "\n";
-    cout << "Reverse order: ";
-    printReverse(q);
-    cout << "\n";
-    //isPalindrome("racecar") ? cout << "Palindrome\n" : cout << "Not a palindrome\n";
-    //isPalindrome("hello") ? cout << "Palindrome\n" : cout << "Not a palindrome\n";
-    
 }

@@ -194,13 +194,12 @@ int main()
     insertHead(head, tail, 20);
     insertHead(head, tail, 30);
     insertHead(head, tail, 40);
+    insertTail(head, tail, 50);
     reverse(head, tail);
     
     for(DDLNode* p = head; p; p = p->next)
     {
         std::cout << p->val << " ";
     }
-    std::cout << "\n";
-
-    hasCycle(head) ? std::cout << "Cycle detected\n" : std::cout << "No cycle\n";
+    std::cout << std::endl;
 }

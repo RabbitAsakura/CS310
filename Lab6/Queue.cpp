@@ -16,6 +16,7 @@ class Queue
     bool enqueue(int x);
     int dequeue();
     int size() const;
+    void display() const;
     int getFront() const;
     bool isEmpty() const;
     bool isFull() const;
@@ -26,8 +27,65 @@ class StackfromQueue
     Queue q1, q2;
     public:
     void push(int x);
+    bool isEmpty() const;
+    void display() const;
     int pop();
 };
+
+void StackfromQueue::display() const
+{
+    if(q1.isEmpty())
+    {
+        cout << "Stack is empty\n";
+        return;
+    }
+    Queue temp = q1;
+    stack<int> s;
+    while(!temp.isEmpty())
+    {
+        s.push(temp.dequeue());
+    }
+    while(!s.empty())
+    {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    cout << "\n";
+}
+bool StackfromQueue::isEmpty() const
+{
+    return q1.isEmpty();
+}
+int StackfromQueue::pop()
+{
+    if(q1.isEmpty())
+    {
+        throw runtime_error("Stack underflow");
+    }
+    return q1.dequeue();
+}
+void StackfromQueue::push(int x)
+{
+    q2.enqueue(x);
+    while(!q1.isEmpty())
+    {
+        q2.enqueue(q1.dequeue());
+    }
+    swap(q1, q2);
+}
+void Queue::display() const
+{
+    if(isEmpty())
+    {
+        cout << "Queue is empty\n";
+        return;
+    }
+    for(int i = 0; i < size(); i++)
+    {
+        cout << arr[(front + i) % MAX] << " ";
+    }
+    cout << "\n";
+}
 
 int Queue::size() const
 {
@@ -77,24 +135,25 @@ int Queue::dequeue()
 
 void ReverseK(Queue& q, int k)
 {
-    if(k <= 0 || q.isEmpty())
+    if(k <= 0 || q.isEmpty() || k > q.size())
     {
         return;
     }
-    Queue s;
+    StackfromQueue s;
     for(int i = 0; i < k; i++)
     {
-        s.enqueue(q.dequeue());
+        s.push(q.dequeue());
     }
     while(!s.isEmpty())
     {
-        q.enqueue(s.dequeue());
+        q.enqueue(s.pop());
     }
     int size = q.size();
     for(int i = 0; i < size - k; i++)
     {
         q.enqueue(q.dequeue());
     }
+    
 }
 
 void generateBinary(int n)
@@ -110,38 +169,79 @@ void generateBinary(int n)
     }
 }
 
-struct treeNode { int val; treeNode* left; treeNode* right;};
-void levelOrder(treeNode* root)
-{
-    if(root == nullptr)
-    {
-        return;
-    }
-    Queue<treeNode*> q;
-    q.enqueue(root);
-    while(!q.isEmpty())
-    {
-        treeNode*current = q.getFront();
-        q.dequeue();
-        cout << current->val << " ";
-        if(current->left != nullptr)
-        {
-            q.enqueue(current->left->val);
-        }
-        if(current->right != nullptr)
-        {
-            q.enqueue(current->right->val);
-        }
-    }
-}
+//struct treeNode { int val; treeNode* left; treeNode* right;};
+//void levelOrder() //Could not get this function to work 
 
 void slidingWindowMax(int arr[], int n, int k, int out[])
 {
+    if(k <= 0 || k > n)
+    {
+        return;
+    }
+    Queue q;
+    int outIndex = 0;
+    for(int i = 0; i < k; i++)
+    {
+        while(!q.isEmpty() && arr[i] >= arr[q.getFront()])
+        {
+            q.dequeue();
+        }
+        q.enqueue(i);
+    }
+    for(int i = k; i < n; i++)
+    {
+        out[outIndex++] = arr[q.getFront()];
+        while(!q.isEmpty() && q.getFront() <= i - k)
+        {
+            q.dequeue();
+        }
+        while(!q.isEmpty() && arr[i] >= arr[q.getFront()])
+        {
+            q.dequeue();
+        }
+        q.enqueue(i);
+    }
+
+    if(!q.isEmpty())
+    {
+        out[outIndex++] = arr[q.getFront()];
+    }
     
 }
 
-
-int main()
+void interleave(Queue& q)
 {
+   int size = q.size();
+    if (size <= 1)
+    {
+        return;
+    }
 
+    int half = size / 2;
+    StackfromQueue s;
+    for (int i = 0; i < half; i++)
+    {
+        s.push(q.dequeue());
+    }
+    while (!s.isEmpty())
+    {
+        q.enqueue(s.pop());
+    }
+    for (int i = 0; i < size - half; i++)
+    {
+        q.enqueue(q.dequeue());
+    }
+    for (int i = 0; i < half; i++)
+    {
+        s.push(q.dequeue());
+    }
+    while (!s.isEmpty())
+    {
+        q.enqueue(s.pop());
+        q.enqueue(q.dequeue());
+    }
+    if (size % 2 != 0)
+    {
+        q.enqueue(q.dequeue());
+    }
 }
