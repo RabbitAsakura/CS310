@@ -76,7 +76,7 @@ class CircularLinkedStack
         {
             newNode->next = topNode->next;
             topNode->next = newNode;
-            topNode = newNode;
+            //topNode = newNode;
         }
          count++;
     }
@@ -275,15 +275,10 @@ class CircularLinkedList
         }
         else
         {
-            Node* tail = head;
-            while(tail->next != head)
-            {
-                tail = tail->next;
-            }
-            newNode->next = head;
-            tail->next = newNode;
-            head = newNode;
+            newNode->next = head->next;
+            head->next = newNode;
         }
+        count++;
       }
 
     void insertRear(T item)
@@ -296,14 +291,11 @@ class CircularLinkedList
         }
         else
         {
-            Node* tail = head;
-            while(tail->next != head)
-            {
-                tail = tail->next;
-            }
-            tail->next = newNode;
-            newNode->next = head;
+            newNode->next = head->next;
+            head->next = newNode;
+            head = newNode;
         }
+        count++;
     }
 
     void deleteFront()
@@ -327,6 +319,8 @@ class CircularLinkedList
             head = head->next;
             tail->next = head;
         }
+        delete temp;
+        count--;
     }
 
     void deleteRear()
@@ -335,6 +329,13 @@ class CircularLinkedList
         {
             throw std::runtime_error("List is empty");
         }
+        if(head->next == head)
+        {
+            delete head;
+            head = nullptr;
+            count--;
+            return;
+        }
         Node* tail = head;
         Node* prev = nullptr;
         while(tail->next != head)
@@ -342,16 +343,9 @@ class CircularLinkedList
             prev = tail;
             tail = tail->next;
         }
-         tail = nullptr;
-         if(prev)
-         {
-            prev->next = head;
-         }
-         else
-         {
-            head = nullptr;
-         }
-         delete tail;
+        prev->next = head;
+        delete tail;
+        count--;
     }
 
     void display() const
@@ -372,7 +366,7 @@ class CircularLinkedList
 };
 
 template<typename T>
-class TextEditiorBuffer
+class TextEditorBuffer
 {
     private:
      CircularLinkedStack<T> buffer;
@@ -385,15 +379,12 @@ class TextEditiorBuffer
         }
         void undo()
         {
-            if(!buffer.isEmpty())
-            {
-                T item = buffer.pop();
-                redoQueue.enqueue(item);
-            }
             if(buffer.isEmpty())
             {
                 throw std::runtime_error("Nothing to undo");
             }
+                T item = buffer.pop();
+                redoQueue.enqueue(item);
         }
         void redo()
         {
@@ -407,17 +398,33 @@ class TextEditiorBuffer
                 throw std::runtime_error("Nothing to redo");
             }
         }
-        void displayBuffer() const
-        {
-            CircularLinkedStack<T> tempStack = buffer;
-            CircularLinkedList<T> tempList;
-            while(!tempStack.isEmpty())
+        void displayBuffer()
             {
-                T item = tempStack.pop();
-                tempList.insertFront(item);
-            }
-            tempList.display();
-        }
+    if(buffer.isEmpty())
+    {
+        std::cout << "Buffer is empty" << std::endl;
+        return;
+    }
+
+    CircularLinkedStack<T> reverseStack;
+    CircularLinkedStack<T> restoreStack; 
+
+    while(!buffer.isEmpty())
+    {
+        T item = buffer.pop();
+        reverseStack.push(item);
+        restoreStack.push(item);
+    }
+    while(!reverseStack.isEmpty())
+    {
+        std::cout << reverseStack.pop();
+    }
+    std::cout << std::endl;
+    while(!restoreStack.isEmpty())
+    {
+        buffer.push(restoreStack.pop());
+    }
+}
 };
 
 int main()
@@ -445,8 +452,22 @@ int main()
     std::cout << std::endl;
 
     CircularLinkedList<int> cll;
-    cll.insertFront(1); cll.insertFront(2); cll.insertRear(0); cll.insertRear(4); cll.insertFront(6);
-    cll.display();
-    cll.deleteFront(); cll.deleteFront();
-    cll.display();
+    cll.insertFront(1); cll.insertFront(2); cll.insertFront(0); cll.insertRear(4); cll.insertRear(6);
+    std::cout << "Circular Linked List: "; cll.display();
+    cll.deleteFront(); cll.deleteRear();
+    std::cout << "Circular Linked List after deleting two items: "; cll.display();
+    cll.deleteFront(); cll.deleteRear(); cll.deleteRear();
+    std::cout << "After deleting all elements: "; cll.display();
+    std::cout << std::endl;
+    
+    TextEditorBuffer<char> editor;
+    TextEditorBuffer<std::string> editorStr;
+    editor.type('P'); editor.type('e'); editor.type('t'); editor.type('e'); editor.type('r'); editor.type(' '); editor.type('P'); editor.type('a'); editor.type('n');
+    std::cout << "Current buffer: "; editor.displayBuffer();
+    editorStr.type("Hello World!");
+    std::cout << "Current buffer(string): "; editorStr.displayBuffer();
+    editor.undo(); editor.undo(); editor.undo();
+    std::cout << "After undoing 3 characters: "; editor.displayBuffer();
+    editor.redo(); editor.redo();
+    std::cout << "After redoing 2 characters: "; editor.displayBuffer();
 }
