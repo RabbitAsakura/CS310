@@ -459,7 +459,27 @@ int main()
     cll.deleteFront(); cll.deleteRear(); cll.deleteRear();
     std::cout << "After deleting all elements: "; cll.display();
     std::cout << std::endl;
-    
+
+    CircularLinkedQueue<char> clq;
+    clq.enqueue('X'); clq.enqueue('Y'); clq.enqueue('Z'); clq.enqueue('W'); clq.enqueue('A');
+    std::cout << "Front element: " << clq.front() << std::endl;
+    std::cout << "Circular Linked Queue size: " << clq.size() << std::endl;
+    clq.dequeue(); clq.dequeue(); clq.dequeue();
+    std::cout << "Front element after dequeuing 3 elements: " << clq.front() << std::endl;
+    std::cout << "Circular Linked Queue size after dequeueing 3 elements: " << clq.size() << std::endl;
+    clq.dequeue(); clq.dequeue();
+    std::cout << "After dequeueing all elements: " << (clq.isEmpty() ? "Queue is empty" : "Queue is not empty") << std::endl;
+    std::cout << std::endl;
+
+    CircularLinkedStack<std::string> cls;
+    cls.push("One"); cls.push("Two"); cls.push("Three"); cls.push("Four"); cls.push("Five");
+    std::cout << "Top element: " << cls.top() << std::endl;
+    std::cout << "Circular Linked Stack size: " << cls.size() << std::endl;
+    cls.pop(); cls.pop(); cls.pop();
+    std::cout << "Top element after popping 3 elements: " << cls.top() << std::endl;
+    std::cout << "Circular Linked Stack size after popping 3 elements: " << cls.size() << std::endl;
+    std::cout << std::endl;
+
     TextEditorBuffer<char> editor;
     TextEditorBuffer<std::string> editorStr;
     editor.type('P'); editor.type('e'); editor.type('t'); editor.type('e'); editor.type('r'); editor.type(' '); editor.type('P'); editor.type('a'); editor.type('n');
