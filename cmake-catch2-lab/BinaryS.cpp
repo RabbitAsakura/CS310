@@ -47,11 +47,11 @@ class TreeType
 
         bool GetItemItr(int item)
         {
-            node = root;
+            TreeNode* node = root;
             while(node != nullptr && item != node->info)
             {
                 node = item < node->info ? node->left : node->right;
-            }
+            }    
             return node != nullptr;
         }
 
