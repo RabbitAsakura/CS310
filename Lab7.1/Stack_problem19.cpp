@@ -36,17 +36,10 @@ int main()
     S1.push(3);
     S1.push(4);
     S1.push(5);
-    std::cout << "Original: ";
-    while(!S1.isEmpty())
-    {
-        std::cout << S1.pop() << " ";
-    }
-
-    std::cout << std::endl;
-
-    //Reverse(S1);
-    std::cout << "Reverse: ";
+    
+    
     Reverse(S1);
+    std::cout << "Reverse: ";
     while(!S1.isEmpty())
     {
         std::cout << S1.pop() << " ";

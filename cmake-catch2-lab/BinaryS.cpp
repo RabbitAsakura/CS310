@@ -18,7 +18,7 @@ class TreeType
 
         ~TreeType() {}
 
-        bool GetItem(int item)
+        bool GetItemRec(int item)
         {
             bool found = false;
             Retrieve(root, item, found);
@@ -76,6 +76,48 @@ class TreeType
             else
             {
                 Insert(node->right, item);
+            }
+        }
+
+        void DeleteItem(int item) { DeleteNode(root, item);}
+        
+        void DeleteNode(TreeNode* node, int item)
+        {
+            if(node == nullptr)
+            {
+                return;
+            }
+            if(item < node->info)
+            {
+                DeleteNode(node->left, item);
+            }
+            else if(item > node->info)
+            {
+                DeleteNode(node->right, item);
+            }
+            else
+            {
+                if(node->left == nullptr && node->right == nullptr)
+                {
+                    delete node;
+                    node = nullptr;
+                }
+                else if (node->left == nullptr)
+                {
+                    TreeNode* temp = node->right;
+                    node = node->right;
+                    delete temp;
+                }
+                else
+                {
+                    TreeNode* temp = node->right;
+                    while(temp->left != nullptr)
+                    {
+                        temp = temp->left;
+                    }
+                    node->info = temp->info;
+                    DeleteNode(node->right,temp->info);
+                }
             }
         }
 
