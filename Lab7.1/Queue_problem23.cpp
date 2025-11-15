@@ -34,6 +34,9 @@ int dequeue(Stack& s1, Stack& s2)
     return s2.pop();
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), if a stack is empty->a function is called that runs n times
+  Iterative: Time:(O(1)), Space:(O(1)), it is a push
+*/
 
 int main()
 {

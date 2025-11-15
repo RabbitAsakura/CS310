@@ -27,6 +27,10 @@ Node* reverseRecursion(Node* head)
     return newHead;
 }
 
+/* Recursive: Time:(O(n)), Space:(O(n)), n stack frames -> risk of stack overflow for n > 10^5
+   Iterative: Time:(O(n)), Space:(O(1)), 3 pointers(next,prev, curr) -> production preferred
+*/
+
 int main()
 {
     LinkedList L1;

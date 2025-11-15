@@ -22,6 +22,9 @@ DNode* reverse(DNode* node)
     return reverse(originalNext);
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), recursion creates one stack frame for each node
+  Iterative: Time:(O(n)), Space:(O(1)), swap is in-place
+*/
 
 int main()
 {

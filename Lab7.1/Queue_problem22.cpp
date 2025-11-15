@@ -16,6 +16,9 @@ void Reverse(Queue& q)
     q.enqueue(temp);
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), function dequeues and calls itself-> happening n times
+  Iterative: Time:(O(n)), Space:(O(n)), Dequeues all n items onto a stack, then pop all n items and enqueue them
+*/
 
 int main()
 {

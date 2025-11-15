@@ -39,6 +39,10 @@ int evaluate(Stack& s)
     }
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n))
+  Iterative: Time:(O(n)), Space:(O(n)) 
+*/
+
 int main()
 {
     Stack s1;

@@ -31,6 +31,9 @@ void generateBinary(int n)
     generateRec(q,n);
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), queue grows to O(n), same as call stack
+  Iterative: Time:(O(n)), Space:(O(n)), queue stores next numbers to be processed
+*/
 
 int main()
 {

@@ -42,7 +42,9 @@ CNode* Josephus(CNode* startNode, int k)
     return Josephus(newStart, k);
 }
 
-
+/*Recursive: Time:(O(n * k)), Space:(O(n)), recursion makes n calls
+  Iterative: Time:(O(n * k)), Space:(O(1)), only use pointers
+*/
 
 int main()
 {

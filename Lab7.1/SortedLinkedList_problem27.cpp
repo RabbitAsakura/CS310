@@ -53,6 +53,10 @@ Node* quickSortRec(Node* head)
     return newHead;
 }
 
+/*Average: Time:(O(n log n)), Space:(O(log n)), When to use: Small lists
+  Worst: Time(O(n^2)), Space: (O(n)), When to use: Already Sorted
+  Iterative: Time:(O(n log n)), Space:(O(1)), When to use: Merge sort bottom-up
+*/
 
 int main()
 {

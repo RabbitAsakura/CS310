@@ -50,6 +50,10 @@ void interleave(Queue& q)
     }
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), both methods must split the list and then reassemble it 
+  Iterative: Time:(O(n)), Space:(O(n)), requires a helper structure to hold the first half of elements
+*/
+
 int main()
 {
     Queue Q1;

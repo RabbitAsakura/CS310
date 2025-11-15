@@ -18,6 +18,9 @@ void deleteNode(CNode* nodeToDelete)
     delete temp;
 }
 
+/* Iterative: Time:(O(1)), Space:(O(1))
+*/
+
 
 int main()
 {

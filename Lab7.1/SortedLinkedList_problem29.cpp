@@ -93,6 +93,10 @@ Node* heapSort(Node* head)
     return head; 
 }
 
+/*Recursive: Time:(O(n log n)), Space:(O(n))
+  Iterative: Time:(O(n log n)), Space:(O(n)) 
+*/
+
 int main()
 {
     SortedLinkedList L1;

@@ -61,6 +61,9 @@ Node* mergeSort(Node* head)
     return merge(sorted_left, sorted_right);
 }
 
+/*Recursive: Time:(O(n log n)), Space:(O(log n)), call a stack depth O(log n)
+  Iterative: Time:(O(n log n)), Space:(O(1)), merging in a linked list is just pointer rearrangement
+*/
 
 int main()
 {

@@ -32,6 +32,9 @@ Node* merge(Node* head1, Node* head2)
     return newHead;
 }
 
+/*Recursive: Time:(O(n + m)), Space:(O(n + m)), call stack will have n + m frames, one for each node
+  Iterative: Time:(O(n + m)), Space: O(1), uses no new extra space
+*/
 
 int main()
 {

@@ -32,6 +32,9 @@ bool hasCycle(Node* head)
     return hasCycleRecusrsion(head, head);
 }
 
+/*Recursive: Time: O(n), Space: O(n), function calls upon itself
+  Iterative: Time: O(n), Space: O(1), only stores two pointers
+*/
 
 int main()
 {
@@ -45,7 +48,6 @@ int main()
     std::cout << "Original: "; 
     L1.print(); 
 
-    //creates a cycle
     Node* node = L1.head->next->next->next->next;
     Node* node2 = L1.head->next->next;
     node->next = node2;

@@ -55,6 +55,11 @@ Node* findMid(Node* head)
     return slow;
 }
 
+/*Recursive: Time:(O(n log n)), Space:(O(log^2 n)), log n levels * O(log n) to count
+  Iterative: Time:(O(n)), Space:(O(1)), Because mid finding is O(n) per level
+  Real World: Recursive: Never Used, Iterative: Always used, Linked list defeats the purpose of binary search
+*/
+
 int main()
 {
     SortedLinkedList L1;

@@ -63,6 +63,9 @@ MLNode* flatten(MLNode* head)
     return head;
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), call stack will be n frames deep
+  Iterative: Time:(O(n)), Space:(O(n)), uses a helper stack to store pointers->stack will hold n nodes
+*/
 
 int main()
 {

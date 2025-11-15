@@ -48,6 +48,9 @@ CNode* insertSorted(CNode* head, int val)
     return head;
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), call stack depth of O(n)
+  Iterative: Time:(O(n)), Space:(O(1)), 
+*/
 
 int main()
 {

@@ -27,6 +27,10 @@ int getLength(CNode* head)
     return countLength(head, head);
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), function calls itself n times 
+  Iterative: Time:(O(n)), Space:(O(1)), fast/slow pointer finds the meeting point in O(n) time
+*/
+
 int main()
 {
     CircularLinkedList C1;

@@ -52,6 +52,11 @@ DNode* rotateWrapper(DNode* head, int k)
     return rotate(head, actual_k);
 }
 
+/*Recursive: Time:(O(n * k)), Space:(O(n * k)), rotate is by k times-> rotate is O(n)-> making the total O(n * k) 
+  Iterative: Time:(O(n)), Space:(O(1)),  finding the length n is one pass
+*/
+
+
 int main()
 {
     DoublyLinkedList D1;

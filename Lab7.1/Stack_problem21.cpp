@@ -66,6 +66,10 @@ bool isBalanced(const string& s)
     return Balanced(s, 0, a);
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), call stack is n frames deep
+  Iterative: Time:(O(n)), Space:(O(n)), stack grows to O(n)
+*/
+
 int main()
 {
     Stack S1;

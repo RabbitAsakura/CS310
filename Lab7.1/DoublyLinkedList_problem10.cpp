@@ -62,6 +62,10 @@ bool findPairSum(DNode* head, int target)
 }
 
 
+/*Recursive: Time:(O(n)), Space:(O(n)), call stack grows as the pointers converge
+  Iterative: Time:(O(n)), Space:(O(1)), only stores two pointers
+*/
+
 int main()
 {
     DoublyLinkedList D1;

@@ -31,6 +31,9 @@ void sortStack(Stack& s)
     sorted(s, temp);
 }
 
+/*Recursive: Time:(O(n^2)), Space:(O(n^2)), sortStack is called n times and sorted is called n times thus n * n
+  Iterative: Time:(O(n^2)), Space:(O(n)),  each element that is popped->move all n elements from the helper stack back
+*/
 
 int main()
 {

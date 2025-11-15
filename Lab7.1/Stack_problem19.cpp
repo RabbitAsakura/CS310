@@ -28,6 +28,10 @@ void Reverse(Stack& s)
     bottom(s, temp);
 }
 
+/*Recursive: Time:(O(n^2)), Space:(O(n^2)), two function calls itself n times so n * n
+  Iterative: Time:(O(n)), Space:(O(n)), pop all n items onto a queue->then put enqueue them back into the stack
+*/
+
 int main()
 {
     Stack S1;

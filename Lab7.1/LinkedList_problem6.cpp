@@ -41,6 +41,9 @@ Node* partition(Node* head, int x)
     }
 }
 
+/* Recursive: Time:(O(n)), Space:(O(n)), recurses on head->next->inserts head->finding would take O(n) time
+   Iterative: Time:(O(n)), Space:(O(1)), pass O(n) time 
+*/
 
 int main()
 {

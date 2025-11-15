@@ -34,6 +34,10 @@ DNode* Delete(DNode* head, int val)
 }
 
 
+/*Recursive: Time:(O(n)), Space:(O(n)), call stack grows as deep as the insertion point
+  Iterative: Time:(O(n)), Space:(O(1)), can track a pointer
+*/
+
 int main()
 {
     DoublyLinkedList D1;

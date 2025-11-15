@@ -23,6 +23,10 @@ Node* findMiddle(Node* head)
     return findMiddleRecursive(head, head);
 }
 
+/*Recursive: Time: O(n), Space: O(n), function calls upon itself
+  Iterative: Time: O(n), Space: O(1), only stores two pointers
+*/
+
 int main()
 {
     LinkedList L1;

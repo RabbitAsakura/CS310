@@ -36,6 +36,9 @@ Node* removeDuplicates(Node* head)
     return head;
 }
 
+/*Recursive: Time:(O(n^2)), Space:(O(n)), recursive calls itself n times and the runner takes O(n) time 
+  Iterative: Time:(O(n)), Space:(O(n)), iterate once -> checking for each node
+*/
 
 int main()
 {

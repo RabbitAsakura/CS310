@@ -42,6 +42,10 @@ Node* insertionSort(Node* head)
     return sortedInsert(sorted_rest, nodeToInsert);
 }
 
+/*Recursive: Time:(O(n^2)), Space:(O(n^2)), function calls itself n times
+  Iterative: Time:(O(n^2)), Space:(O(1)), In-place
+*/
+
 int main()
 {
     SortedLinkedList L1;

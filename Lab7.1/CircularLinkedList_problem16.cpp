@@ -53,6 +53,9 @@ CNode* split(CNode* head)
     return head2;
 }
 
+/*Recursive: Time:(O(n)), Space:(O(n)), recursive helper->which is O(n) time
+  Iterative: Time:(O(n)), Space:(O(1)), use a fast and slow pointer to find middle->relink the tail of the first half and the tail of the second half
+*/
 
 int main()
 {
