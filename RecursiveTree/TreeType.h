@@ -19,6 +19,7 @@ public:
   ItemType GetItem(ItemType item, bool& found);
   void PutItem(ItemType item);
   void DeleteItem(ItemType item);
+  int LeafCount() const;
   void ResetTree(OrderType order); 
   ItemType GetNextItem(OrderType order, bool& finished);
   void Print(std::ofstream& outFile) const;

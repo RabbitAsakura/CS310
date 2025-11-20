@@ -322,6 +322,28 @@ void PostOrder(TreeNode* tree,
   }
 }
 
+int Count(TreeNode* tree)
+{
+    if(tree == NULL)
+    {
+      return 0;
+    }
+    else if(tree->left == NULL && tree->right == NULL)
+    {
+      return 1;
+    }
+    else
+    {
+      return Count(tree->left) + Count(tree->right);
+    }
+}
+
+
+int TreeType::LeafCount() const
+{
+  return Count(root);
+}
+
 
 ItemType TreeType::GetNextItem(OrderType order, bool& finished)
 // Returns the next item in the desired order.

@@ -72,6 +72,8 @@ int main()
     } 
     else if (command == "GetLength")  
       outFile << "Number of nodes is " << tree.GetLength() << endl;
+    else if (command == "LeafCount")
+      outFile << "Lead Count is " << tree.LeafCount() << endl;
     else if (command == "IsEmpty")
       if (tree.IsEmpty())
         outFile << "Tree is empty." << endl;
