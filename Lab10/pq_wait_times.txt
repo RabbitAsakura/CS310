@@ -1,0 +1,423 @@
+--- Priority Queue Wait Time Simulation Results ---
+
+--- Pre-Store Opening: 10 Initial Customers ---
+
+P12: Skrine Jonah (Assigned #1) enqueued.
+P12: Mccoy Fabian (Assigned #2) enqueued.
+P13: Aren Egwuekwe (Assigned #3) enqueued.
+P12: Craig Edelin (Assigned #4) enqueued.
+P17: Lyles-Hughes Seth (Assigned #5) enqueued.
+P11: Oliga Colby (Assigned #6) enqueued.
+P10: Noel Boadi (Assigned #7) enqueued.
+P11: Oliga Colby (Assigned #8) enqueued.
+P9: D Metrius (Assigned #9) enqueued.
+P15: Russell William (Assigned #10) enqueued.
+
+--- Main Simulation: Serving up to 200 Customers ---
+
+DEQUEUED: D Metrius (P9, Assigned #9) Wait Time: 1
+DEQUEUED: Noel Boadi (P10, Assigned #7) Wait Time: 3
+DEQUEUED: Oliga Colby (P11, Assigned #8) Wait Time: 8
+DEQUEUED: Kyles Edwin (P11, Assigned #12) Wait Time: 4
+DEQUEUED: Mack John (P9, Assigned #20) Wait Time: 1
+DEQUEUED: Simon Earl (P10, Assigned #17) Wait Time: 4
+DEQUEUED: Oliga Colby (P11, Assigned #6) Wait Time: 16
+DEQUEUED: Kyles Edwin (P11, Assigned #14) Wait Time: 8
+DEQUEUED: Nwaduba John (P12, Assigned #16) Wait Time: 7
+DEQUEUED: Craig Edelin (P12, Assigned #4) Wait Time: 21
+DEQUEUED: Craig Edelin (P12, Assigned #22) Wait Time: 5
+DEQUEUED: Mccoy Fabian (P12, Assigned #25) Wait Time: 3
+DEQUEUED: Mack John (P9, Assigned #29) Wait Time: 0
+DEQUEUED: Menelik Haqq (P12, Assigned #26) Wait Time: 4
+DEQUEUED: Mccoy Fabian (P12, Assigned #2) Wait Time: 30
+DEQUEUED: Craig Edelin (P12, Assigned #30) Wait Time: 4
+DEQUEUED: Skrine Jonah (P12, Assigned #1) Wait Time: 33
+DEQUEUED: Mccoy Fabian (P12, Assigned #18) Wait Time: 19
+DEQUEUED: Terrell Colby (P13, Assigned #19) Wait Time: 20
+DEQUEUED: Simon Earl (P10, Assigned #41) Wait Time: 1
+DEQUEUED: Oliga Colby (P11, Assigned #44) Wait Time: 1
+DEQUEUED: Menelik Haqq (P12, Assigned #42) Wait Time: 3
+DEQUEUED: D Metrius (P9, Assigned #46) Wait Time: 0
+DEQUEUED: Menelik Haqq (P12, Assigned #48) Wait Time: 0
+DEQUEUED: Malik Bullard (P13, Assigned #39) Wait Time: 11
+DEQUEUED: Malik Bullard (P13, Assigned #40) Wait Time: 10
+DEQUEUED: Aren Egwuekwe (P13, Assigned #35) Wait Time: 16
+DEQUEUED: Malik Bullard (P13, Assigned #43) Wait Time: 8
+DEQUEUED: Mccoy Fabian (P12, Assigned #53) Wait Time: 0
+DEQUEUED: Aren Egwuekwe (P13, Assigned #33) Wait Time: 20
+DEQUEUED: Aren Egwuekwe (P13, Assigned #13) Wait Time: 41
+DEQUEUED: Aren Egwuekwe (P13, Assigned #3) Wait Time: 53
+DEQUEUED: Prince Rashad (P13, Assigned #50) Wait Time: 9
+DEQUEUED: Prince Rashad (P13, Assigned #55) Wait Time: 5
+DEQUEUED: Smith Kaleb (P11, Assigned #61) Wait Time: 1
+DEQUEUED: Herring Zuriel (P14, Assigned #45) Wait Time: 18
+DEQUEUED: Craig Edelin (P12, Assigned #64) Wait Time: 1
+DEQUEUED: Herring Zuriel (P14, Assigned #28) Wait Time: 37
+DEQUEUED: Simon Earl (P10, Assigned #66) Wait Time: 0
+DEQUEUED: Herring Zuriel (P14, Assigned #21) Wait Time: 45
+DEQUEUED: Craig Edelin (P12, Assigned #68) Wait Time: 0
+DEQUEUED: Kyles Edwin (P11, Assigned #69) Wait Time: 1
+DEQUEUED: Herring Zuriel (P14, Assigned #62) Wait Time: 8
+DEQUEUED: Mack John (P9, Assigned #72) Wait Time: 1
+DEQUEUED: Lewis Tijon (P11, Assigned #71) Wait Time: 2
+DEQUEUED: Whigham Isaiah (P14, Assigned #67) Wait Time: 6
+DEQUEUED: Herring Zuriel (P14, Assigned #52) Wait Time: 22
+DEQUEUED: Herring Zuriel (P14, Assigned #54) Wait Time: 20
+DEQUEUED: D Metrius (P9, Assigned #75) Wait Time: 2
+DEQUEUED: Aren Egwuekwe (P13, Assigned #77) Wait Time: 0
+DEQUEUED: Johnson Reuben (P14, Assigned #74) Wait Time: 3
+DEQUEUED: Stokes Shelton (P14, Assigned #24) Wait Time: 53
+DEQUEUED: Russell William (P15, Assigned #34) Wait Time: 43
+DEQUEUED: Michael Griffin (P15, Assigned #51) Wait Time: 26
+DEQUEUED: Jamar Alexander (P15, Assigned #32) Wait Time: 45
+DEQUEUED: D Metrius (P9, Assigned #78) Wait Time: 0
+DEQUEUED: Craig Edelin (P12, Assigned #80) Wait Time: 1
+DEQUEUED: D Metrius (P9, Assigned #86) Wait Time: 1
+DEQUEUED: Noel Boadi (P10, Assigned #83) Wait Time: 8
+DEQUEUED: Mack John (P9, Assigned #95) Wait Time: 0
+DEQUEUED: Noel Boadi (P10, Assigned #92) Wait Time: 4
+DEQUEUED: Lewis Tijon (P11, Assigned #90) Wait Time: 6
+DEQUEUED: Swain Dylan (P11, Assigned #96) Wait Time: 4
+DEQUEUED: Swain Dylan (P11, Assigned #84) Wait Time: 19
+DEQUEUED: Kyles Edwin (P11, Assigned #102) Wait Time: 4
+DEQUEUED: Oliga Colby (P11, Assigned #82) Wait Time: 27
+DEQUEUED: Oliga Colby (P11, Assigned #107) Wait Time: 3
+DEQUEUED: Noel Boadi (P10, Assigned #114) Wait Time: 2
+DEQUEUED: Craig Edelin (P12, Assigned #100) Wait Time: 16
+DEQUEUED: Mccoy Fabian (P12, Assigned #101) Wait Time: 16
+DEQUEUED: Skrine Jonah (P12, Assigned #97) Wait Time: 20
+DEQUEUED: D Metrius (P9, Assigned #118) Wait Time: 4
+DEQUEUED: Simon Earl (P10, Assigned #122) Wait Time: 0
+DEQUEUED: Swain Dylan (P11, Assigned #121) Wait Time: 3
+DEQUEUED: Oliga Colby (P11, Assigned #125) Wait Time: 3
+DEQUEUED: Simon Earl (P10, Assigned #137) Wait Time: 2
+DEQUEUED: Mccoy Fabian (P12, Assigned #111) Wait Time: 29
+DEQUEUED: Swain Dylan (P11, Assigned #141) Wait Time: 1
+DEQUEUED: Nwaduba John (P12, Assigned #81) Wait Time: 61
+DEQUEUED: Oliga Colby (P11, Assigned #143) Wait Time: 0
+DEQUEUED: Mack John (P9, Assigned #146) Wait Time: 2
+DEQUEUED: Craig Edelin (P12, Assigned #117) Wait Time: 33
+DEQUEUED: Mack John (P9, Assigned #153) Wait Time: 1
+DEQUEUED: Noel Boadi (P10, Assigned #152) Wait Time: 4
+DEQUEUED: Nwaduba John (P12, Assigned #120) Wait Time: 36
+DEQUEUED: Simon Earl (P10, Assigned #157) Wait Time: 4
+DEQUEUED: Simon Earl (P10, Assigned #159) Wait Time: 2
+DEQUEUED: Menelik Haqq (P12, Assigned #151) Wait Time: 10
+DEQUEUED: Craig Edelin (P12, Assigned #154) Wait Time: 7
+DEQUEUED: Nwaduba John (P12, Assigned #156) Wait Time: 5
+DEQUEUED: Menelik Haqq (P12, Assigned #160) Wait Time: 1
+DEQUEUED: Smith Kaleb (P11, Assigned #162) Wait Time: 4
+DEQUEUED: Lewis Tijon (P11, Assigned #167) Wait Time: 0
+DEQUEUED: Mccoy Fabian (P12, Assigned #133) Wait Time: 34
+DEQUEUED: Skrine Jonah (P12, Assigned #163) Wait Time: 4
+DEQUEUED: D Metrius (P9, Assigned #168) Wait Time: 2
+DEQUEUED: Noel Boadi (P10, Assigned #173) Wait Time: 3
+DEQUEUED: Simon Earl (P10, Assigned #174) Wait Time: 3
+DEQUEUED: Swain Dylan (P11, Assigned #170) Wait Time: 8
+DEQUEUED: D Metrius (P9, Assigned #181) Wait Time: 0
+DEQUEUED: Kyles Edwin (P11, Assigned #175) Wait Time: 6
+DEQUEUED: Craig Edelin (P12, Assigned #164) Wait Time: 18
+DEQUEUED: Menelik Haqq (P12, Assigned #176) Wait Time: 9
+DEQUEUED: Mccoy Fabian (P12, Assigned #179) Wait Time: 6
+DEQUEUED: Simon Earl (P10, Assigned #186) Wait Time: 1
+DEQUEUED: Craig Edelin (P12, Assigned #183) Wait Time: 7
+DEQUEUED: Craig Edelin (P12, Assigned #184) Wait Time: 6
+DEQUEUED: Mccoy Fabian (P12, Assigned #134) Wait Time: 56
+DEQUEUED: Nwaduba John (P12, Assigned #87) Wait Time: 104
+DEQUEUED: Craig Edelin (P12, Assigned #89) Wait Time: 102
+DEQUEUED: Prince Rashad (P13, Assigned #180) Wait Time: 11
+DEQUEUED: Craig Edelin (P12, Assigned #192) Wait Time: 1
+DEQUEUED: Mccoy Fabian (P12, Assigned #194) Wait Time: 3
+DEQUEUED: Mack John (P9, Assigned #198) Wait Time: 1
+DEQUEUED: Prince Rashad (P13, Assigned #145) Wait Time: 54
+DEQUEUED: Swain Dylan (P11, Assigned #202) Wait Time: 0
+DEQUEUED: Malik Bullard (P13, Assigned #196) Wait Time: 6
+DEQUEUED: Noel Boadi (P10, Assigned #205) Wait Time: 0
+DEQUEUED: Mccoy Fabian (P12, Assigned #204) Wait Time: 2
+DEQUEUED: Mccoy Fabian (P12, Assigned #206) Wait Time: 3
+DEQUEUED: Nwaduba John (P12, Assigned #207) Wait Time: 2
+DEQUEUED: Aren Egwuekwe (P13, Assigned #208) Wait Time: 1
+DEQUEUED: Terrell Colby (P13, Assigned #109) Wait Time: 100
+DEQUEUED: Mack John (P9, Assigned #210) Wait Time: 4
+DEQUEUED: Oliga Colby (P11, Assigned #214) Wait Time: 4
+DEQUEUED: Swain Dylan (P11, Assigned #215) Wait Time: 3
+DEQUEUED: Menelik Haqq (P12, Assigned #213) Wait Time: 6
+DEQUEUED: Skrine Jonah (P12, Assigned #216) Wait Time: 3
+DEQUEUED: Prince Rashad (P13, Assigned #91) Wait Time: 128
+DEQUEUED: Mack John (P9, Assigned #220) Wait Time: 1
+DEQUEUED: Swain Dylan (P11, Assigned #221) Wait Time: 0
+DEQUEUED: Lewis Tijon (P11, Assigned #222) Wait Time: 2
+DEQUEUED: Skrine Jonah (P12, Assigned #223) Wait Time: 3
+DEQUEUED: Lewis Tijon (P11, Assigned #227) Wait Time: 0
+DEQUEUED: Mccoy Fabian (P12, Assigned #225) Wait Time: 3
+DEQUEUED: Prince Rashad (P13, Assigned #218) Wait Time: 10
+DEQUEUED: Swain Dylan (P11, Assigned #229) Wait Time: 1
+DEQUEUED: Menelik Haqq (P12, Assigned #231) Wait Time: 0
+DEQUEUED: Prince Rashad (P13, Assigned #113) Wait Time: 118
+DEQUEUED: Oliga Colby (P11, Assigned #236) Wait Time: 3
+DEQUEUED: Kyles Edwin (P11, Assigned #237) Wait Time: 2
+DEQUEUED: Craig Edelin (P12, Assigned #234) Wait Time: 5
+DEQUEUED: Malik Bullard (P13, Assigned #178) Wait Time: 61
+DEQUEUED: Prince Rashad (P13, Assigned #230) Wait Time: 9
+DEQUEUED: D Metrius (P9, Assigned #240) Wait Time: 1
+DEQUEUED: Terrell Colby (P13, Assigned #190) Wait Time: 52
+DEQUEUED: Aren Egwuekwe (P13, Assigned #182) Wait Time: 60
+DEQUEUED: D Metrius (P9, Assigned #243) Wait Time: 0
+DEQUEUED: Craig Edelin (P12, Assigned #244) Wait Time: 0
+DEQUEUED: Menelik Haqq (P12, Assigned #247) Wait Time: 0
+DEQUEUED: D Metrius (P9, Assigned #248) Wait Time: 1
+DEQUEUED: Malik Bullard (P13, Assigned #148) Wait Time: 102
+DEQUEUED: Aren Egwuekwe (P13, Assigned #124) Wait Time: 126
+DEQUEUED: Aren Egwuekwe (P13, Assigned #191) Wait Time: 59
+DEQUEUED: Prince Rashad (P13, Assigned #187) Wait Time: 63
+DEQUEUED: Terrell Colby (P13, Assigned #224) Wait Time: 27
+DEQUEUED: Smith Kaleb (P11, Assigned #252) Wait Time: 0
+DEQUEUED: Kyles Edwin (P11, Assigned #253) Wait Time: 3
+DEQUEUED: D Metrius (P9, Assigned #257) Wait Time: 1
+DEQUEUED: Menelik Haqq (P12, Assigned #256) Wait Time: 2
+DEQUEUED: Kyles Edwin (P11, Assigned #260) Wait Time: 0
+DEQUEUED: Skrine Jonah (P12, Assigned #258) Wait Time: 3
+DEQUEUED: Malik Bullard (P13, Assigned #123) Wait Time: 139
+DEQUEUED: Simon Earl (P10, Assigned #263) Wait Time: 0
+DEQUEUED: Terrell Colby (P13, Assigned #79) Wait Time: 184
+DEQUEUED: Noel Boadi (P10, Assigned #265) Wait Time: 0
+DEQUEUED: D Metrius (P9, Assigned #266) Wait Time: 0
+DEQUEUED: Smith Kaleb (P11, Assigned #264) Wait Time: 3
+DEQUEUED: D Metrius (P9, Assigned #268) Wait Time: 0
+DEQUEUED: Menelik Haqq (P12, Assigned #267) Wait Time: 2
+DEQUEUED: Prince Rashad (P13, Assigned #226) Wait Time: 43
+DEQUEUED: Oliga Colby (P11, Assigned #271) Wait Time: 0
+DEQUEUED: Malik Bullard (P13, Assigned #150) Wait Time: 121
+DEQUEUED: Aren Egwuekwe (P13, Assigned #251) Wait Time: 20
+DEQUEUED: Swain Dylan (P11, Assigned #272) Wait Time: 0
+DEQUEUED: Skrine Jonah (P12, Assigned #273) Wait Time: 0
+DEQUEUED: Noel Boadi (P10, Assigned #274) Wait Time: 2
+DEQUEUED: Smith Kaleb (P11, Assigned #276) Wait Time: 1
+DEQUEUED: Aren Egwuekwe (P13, Assigned #165) Wait Time: 113
+DEQUEUED: Nwaduba John (P12, Assigned #279) Wait Time: 0
+DEQUEUED: Malik Bullard (P13, Assigned #139) Wait Time: 141
+DEQUEUED: Prince Rashad (P13, Assigned #127) Wait Time: 153
+DEQUEUED: Swain Dylan (P11, Assigned #282) Wait Time: 0
+DEQUEUED: Malik Bullard (P13, Assigned #129) Wait Time: 153
+DEQUEUED: Prince Rashad (P13, Assigned #88) Wait Time: 195
+DEQUEUED: Malik Bullard (P13, Assigned #135) Wait Time: 148
+DEQUEUED: Johnson Reuben (P14, Assigned #199) Wait Time: 84
+DEQUEUED: Simon Earl (P10, Assigned #285) Wait Time: 1
+DEQUEUED: Lewis Tijon (P11, Assigned #284) Wait Time: 3
+DEQUEUED: Swain Dylan (P11, Assigned #286) Wait Time: 3
+DEQUEUED: Skrine Jonah (P12, Assigned #289) Wait Time: 1
+DEQUEUED: Terrell Colby (P13, Assigned #287) Wait Time: 3
+DEQUEUED: Prince Rashad (P13, Assigned #290) Wait Time: 0
+DEQUEUED: Swain Dylan (P11, Assigned #292) Wait Time: 1
+DEQUEUED: Prince Rashad (P13, Assigned #294) Wait Time: 0
+DEQUEUED: Stokes Shelton (P14, Assigned #106) Wait Time: 189
+DEQUEUED: Herring Zuriel (P14, Assigned #295) Wait Time: 0
+DEQUEUED: Herring Zuriel (P14, Assigned #172) Wait Time: 123
+DEQUEUED: Oliga Colby (P11, Assigned #297) Wait Time: 0
+DEQUEUED: Johnson Reuben (P14, Assigned #110) Wait Time: 188
+
+--- FINAL PURCHASERS AND WAIT TIMES ---
+
+Total services completed: 200
+Name			Wait Time
+---------------------------------------
+D Metrius		1
+Noel Boadi		3
+Oliga Colby		8
+Kyles Edwin		4
+Mack John		1
+Simon Earl		4
+Oliga Colby		16
+Kyles Edwin		8
+Nwaduba John		7
+Craig Edelin		21
+Craig Edelin		5
+Mccoy Fabian		3
+Mack John		0
+Menelik Haqq		4
+Mccoy Fabian		30
+Craig Edelin		4
+Skrine Jonah		33
+Mccoy Fabian		19
+Terrell Colby		20
+Simon Earl		1
+Oliga Colby		1
+Menelik Haqq		3
+D Metrius		0
+Menelik Haqq		0
+Malik Bullard		11
+Malik Bullard		10
+Aren Egwuekwe		16
+Malik Bullard		8
+Mccoy Fabian		0
+Aren Egwuekwe		20
+Aren Egwuekwe		41
+Aren Egwuekwe		53
+Prince Rashad		9
+Prince Rashad		5
+Smith Kaleb		1
+Herring Zuriel		18
+Craig Edelin		1
+Herring Zuriel		37
+Simon Earl		0
+Herring Zuriel		45
+Craig Edelin		0
+Kyles Edwin		1
+Herring Zuriel		8
+Mack John		1
+Lewis Tijon		2
+Whigham Isaiah		6
+Herring Zuriel		22
+Herring Zuriel		20
+D Metrius		2
+Aren Egwuekwe		0
+Johnson Reuben		3
+Stokes Shelton		53
+Russell William		43
+Michael Griffin		26
+Jamar Alexander		45
+D Metrius		0
+Craig Edelin		1
+D Metrius		1
+Noel Boadi		8
+Mack John		0
+Noel Boadi		4
+Lewis Tijon		6
+Swain Dylan		4
+Swain Dylan		19
+Kyles Edwin		4
+Oliga Colby		27
+Oliga Colby		3
+Noel Boadi		2
+Craig Edelin		16
+Mccoy Fabian		16
+Skrine Jonah		20
+D Metrius		4
+Simon Earl		0
+Swain Dylan		3
+Oliga Colby		3
+Simon Earl		2
+Mccoy Fabian		29
+Swain Dylan		1
+Nwaduba John		61
+Oliga Colby		0
+Mack John		2
+Craig Edelin		33
+Mack John		1
+Noel Boadi		4
+Nwaduba John		36
+Simon Earl		4
+Simon Earl		2
+Menelik Haqq		10
+Craig Edelin		7
+Nwaduba John		5
+Menelik Haqq		1
+Smith Kaleb		4
+Lewis Tijon		0
+Mccoy Fabian		34
+Skrine Jonah		4
+D Metrius		2
+Noel Boadi		3
+Simon Earl		3
+Swain Dylan		8
+D Metrius		0
+Kyles Edwin		6
+Craig Edelin		18
+Menelik Haqq		9
+Mccoy Fabian		6
+Simon Earl		1
+Craig Edelin		7
+Craig Edelin		6
+Mccoy Fabian		56
+Nwaduba John		104
+Craig Edelin		102
+Prince Rashad		11
+Craig Edelin		1
+Mccoy Fabian		3
+Mack John		1
+Prince Rashad		54
+Swain Dylan		0
+Malik Bullard		6
+Noel Boadi		0
+Mccoy Fabian		2
+Mccoy Fabian		3
+Nwaduba John		2
+Aren Egwuekwe		1
+Terrell Colby		100
+Mack John		4
+Oliga Colby		4
+Swain Dylan		3
+Menelik Haqq		6
+Skrine Jonah		3
+Prince Rashad		128
+Mack John		1
+Swain Dylan		0
+Lewis Tijon		2
+Skrine Jonah		3
+Lewis Tijon		0
+Mccoy Fabian		3
+Prince Rashad		10
+Swain Dylan		1
+Menelik Haqq		0
+Prince Rashad		118
+Oliga Colby		3
+Kyles Edwin		2
+Craig Edelin		5
+Malik Bullard		61
+Prince Rashad		9
+D Metrius		1
+Terrell Colby		52
+Aren Egwuekwe		60
+D Metrius		0
+Craig Edelin		0
+Menelik Haqq		0
+D Metrius		1
+Malik Bullard		102
+Aren Egwuekwe		126
+Aren Egwuekwe		59
+Prince Rashad		63
+Terrell Colby		27
+Smith Kaleb		0
+Kyles Edwin		3
+D Metrius		1
+Menelik Haqq		2
+Kyles Edwin		0
+Skrine Jonah		3
+Malik Bullard		139
+Simon Earl		0
+Terrell Colby		184
+Noel Boadi		0
+D Metrius		0
+Smith Kaleb		3
+D Metrius		0
+Menelik Haqq		2
+Prince Rashad		43
+Oliga Colby		0
+Malik Bullard		121
+Aren Egwuekwe		20
+Swain Dylan		0
+Skrine Jonah		0
+Noel Boadi		2
+Smith Kaleb		1
+Aren Egwuekwe		113
+Nwaduba John		0
+Malik Bullard		141
+Prince Rashad		153
+Swain Dylan		0
+Malik Bullard		153
+Prince Rashad		195
+Malik Bullard		148
+Johnson Reuben		84
+Simon Earl		1
+Lewis Tijon		3
+Swain Dylan		3
+Skrine Jonah		1
+Terrell Colby		3
+Prince Rashad		0
+Swain Dylan		1
+Prince Rashad		0
+Stokes Shelton		189
+Herring Zuriel		0
+Herring Zuriel		123
+Oliga Colby		0
+Johnson Reuben		188
