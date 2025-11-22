@@ -40,8 +40,4 @@ class Customer
             return nameLength <= other.nameLength;
         }
 };
-
-
-
-
 #endif

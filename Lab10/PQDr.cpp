@@ -37,27 +37,21 @@ void Roster(vector<pair<string, string>>& names)
 
 int main()
 {
-    // --- File Setup (Minimized) ---
-    // The output file MUST be named pq_wait_times.txt
     ofstream outFile("pq_wait_times.txt");
     outFile << "--- Priority Queue Wait Time Simulation Results ---" << endl;
 
-    // --- Simulation Setup ---
     const int MAX_QUEUE_SIZE = 100;
     const int PRE_OPEN_CUSTOMERS = 10;
-    const int MAX_SERVICES = 200; // Serve the first 200 by priority
+    const int MAX_SERVICES = 200; 
     
-    // Initialize random seed
     srand(time(0)); 
-    
-    // Use the required ItemType and Priority Queue
+
     PQType<Customer> queue(MAX_QUEUE_SIZE);
     vector<pair<string, string>> rosterNames;
-    vector<pair<string, int>> waitTimes; // Stores {Name, WaitTime} for output
-    int currentCount = 0; // The shared counter for assigned number and current time
+    vector<pair<string, int>> waitTimes; 
+    int currentCount = 0;
     int servicesCompleted = 0;
     
-    // 1. Read the roster names
     Roster(rosterNames);
 
     if (rosterNames.empty()) {
@@ -66,7 +60,6 @@ int main()
         return 1;
     }
 
-    // --- 2. Pre-Store Opening (Enqueue 10 random people) ---
     outFile << "\n--- Pre-Store Opening: 10 Initial Customers ---\n" << endl;
     for (int i = 0; i < PRE_OPEN_CUSTOMERS; ++i)
     {
@@ -74,7 +67,7 @@ int main()
         string first = rosterNames[randomIndex].first;
         string last = rosterNames[randomIndex].second;
         
-        currentCount++; // Assigned number and current count start at 1 and increment
+        currentCount++; 
         Customer newCustomer(first, last, currentCount);
 
         try
