@@ -1,4 +1,5 @@
-// Definition of class PQType, which represents the Priority Queue ADT
+//Jakobe McPhail
+//11/22/25
 class FullPQ{};
 class EmptyPQ{};
 #include "heap.h"
