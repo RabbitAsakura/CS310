@@ -4,12 +4,30 @@
 #include "avltree.h"
 using namespace std;
 
-struct TreeNode
+/*struct TreeNode
 {
-    ItemType value;
+    int value;
     TreeNode* left;
     TreeNode* right;
-};
+};*/
+
+TreeNode::TreeNode()
+        {
+            value = 0;
+            right = NULL;
+            left = NULL;
+        }
+        TreeNode::TreeNode(int v)
+        {
+            value = v;
+            right = NULL;
+            left = NULL;
+        }
+
+  AVLTree::AVLTree()
+        {
+            root = NULL;
+        }
 
 bool AVLTree::isEmpty() const
 {
@@ -20,7 +38,7 @@ int AVLTree::height(TreeNode* val)
 {
     if(val == NULL)
     {
-        return 1;
+        return -1;
     }
     else
     {
@@ -41,7 +59,7 @@ int AVLTree::balance(TreeNode* val)
 {
     if(val == NULL)
     {
-        return 1;
+        return 0;
     }
     return height(val->left) - height(val->right);
 }
@@ -69,16 +87,16 @@ TreeNode* AVLTree::insert(TreeNode* val, TreeNode* item)
 {
     if(val == NULL)
     {
-        val = item;
+        //val = item;
         std::cout << "New Value Inserted" << std::endl;
-        return val;
+        return item;
     }
     
-    if(val->value < item->value)
+    if(item->value < val->value)
     {
         val->left = insert(val->left, item);
     }
-    else if(val->value > item->value)
+    else if(item->value > val->value)
     {
         val->right = insert(val->right, item);
     }
@@ -89,6 +107,15 @@ TreeNode* AVLTree::insert(TreeNode* val, TreeNode* item)
     }
 
     int getBalance = balance(val);
+    if (getBalance > 1 && item->value < val->left->value)
+    {
+        return rotateRight(val);
+    }
+
+    if (getBalance < -1 && item->value > val->right->value)
+    {
+        return rotateLeft(val);
+    }
     if(getBalance > 1 && item->value < val->left->value)
     {
         val->left = rotateLeft(val->left);
@@ -120,26 +147,27 @@ TreeNode* AVLTree::deleteNode(TreeNode* val, int n)
     }
     else
     {
-        TreeNode* temp;
+        
         if(val->left == NULL)
         {
-            temp = val->right;
+            TreeNode* temp = val->right;
             delete val;
             return temp;
         }
         else if(val->right == NULL)
         {
-            temp = val->left;
+            TreeNode* temp = val->left;
             delete val;
             return temp;
         }
         else
         {
-            temp = minValue(val->right);
+            TreeNode* temp = minValue(val->right);
             val->value = temp->value;
             val->right = deleteNode(val->right, temp->value);
         }
     }
+    return val;
 }
 
 TreeNode* AVLTree::minValue(TreeNode* val)
@@ -196,7 +224,7 @@ void AVLTree::display(TreeNode* val, int space)
     display(val->right, space);
     std::cout << std::endl;
     
-    for(int i = space; i < space; i++)
+    for(int i = 0; i < space; i++)
     {
         std::cout << " ";
     }

@@ -5,6 +5,7 @@
 #include "avltree.h"
 
 
+
 int main()
 {
     AVLTree obj;
@@ -13,13 +14,13 @@ int main()
     {
       std::cout << "Choose what you will like to do: ";
       std::cout << "Select from 1-6, Press 0 to exit." << std::endl;
-      std::cout << "1. Insert";
-      std::cout << "2. Search";
-      std::cout << "3. Delete";
-      std::cout << "4. Display";
-      std::cout << "5. Height";
-      std::cout << "6. Clear";
-      std::cout << "0. Exit";
+      std::cout << "1. Insert" << std::endl;
+      std::cout << "2. Search" << std::endl;
+      std::cout << "3. Delete" << std::endl;
+      std::cout << "4. Display" << std::endl;
+      std::cout << "5. Height" << std::endl;
+      std::cout << "6. Clear" << std::endl;
+      std::cout << "0. Exit" << std::endl;
 
       std::cin >> choice;
       TreeNode *node = new TreeNode;
@@ -66,17 +67,19 @@ int main()
         case 4:
             obj.display(obj.root, 5);
             std::cout << std::endl;
-            std::cout << "Pre-Order";
+            std::cout << "Pre-Order: ";
             obj.Preorder(obj.root);
             std::cout << std::endl;
-            std::cout << "In-Order";
+            std::cout << "In-Order: ";
             obj.Inorder(obj.root);
             std::cout << std::endl;
-            std::cout << "Post-Order";
+            std::cout << "Post-Order: ";
             obj.Postorder(obj.root);
+            std::cout << std::endl;
             break;
         case 5:
             std::cout << "Height: " << obj.height(obj.root);
+            std::cout << std::endl;
             break;
         case 6:
             system("cls");
