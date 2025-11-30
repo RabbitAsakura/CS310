@@ -1,5 +1,0 @@
-if(EXISTS "/workspaces/CS310/build/unit_tests-b12d07c_tests.cmake")
-  include("/workspaces/CS310/build/unit_tests-b12d07c_tests.cmake")
-else()
-  add_test(unit_tests_NOT_BUILT-b12d07c unit_tests_NOT_BUILT-b12d07c)
-endif()
