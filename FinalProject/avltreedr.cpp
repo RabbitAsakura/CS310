@@ -1,4 +1,5 @@
 //Jakobe McPhail
+//Sean McElwee
 //11/27/25
 //Data Structures
 #include <iostream>
