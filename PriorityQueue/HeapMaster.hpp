@@ -126,4 +126,79 @@ void HeapMaster<T, MAX_SIZE, Compare>::pop()
     heapifyDown(0);
 }
 
+template<typename T, int MAX_SIZE, typename Compare>
+void HeapMaster<T, MAX_SIZE, Compare>::buildHeap(const T arr[], int n)
+{
+    if(n > MAX_SIZE) throw std::overflow_error("Full");
+    for(int i = 0; i < n; i++)
+    {
+        data[i] = arr[i];
+    }
+    sz = n;
+
+    int start = parent(n - 1);
+    for(int i = start; i >= 0; i--)
+    {
+        heapifyDown(i);
+    }
+}
+
+template<typename T, int MAX_SIZE, typename Compare>
+void HeapMaster<T, MAX_SIZE, Compare>::printHeap() const
+{
+    if(sz == 0)
+    {
+        std::cout << "Heap is empty\n";
+        return;
+    }
+
+    int i = 0;
+    int level = 0;
+    int console_width =80;
+
+    while(i < sz)
+    {
+        int nodes = 1 << level;
+        int total = console_width/nodes;
+        int leading = total / 2;
+        int inter = total;
+
+        std::cout << std::setw(leading) << "";
+
+        for(int j = 0; j < nodes && i < sz; j++, i++)
+        {
+            std::cout << data[i];
+            if(j < nodes - 1 && i < sz - 1)
+            {
+                std::cout << std::setw(inter) << "";
+            }
+        }
+        std::cout << "\n";
+        level++;
+    }
+
+}
+
+template<typename T, int MAX_SIZE, typename Compare>
+void HeapMaster<T, MAX_SIZE, Compare>::printArray() const
+{
+     if(sz == 0)
+    {
+        std::cout << "Array is empty\n";
+        return;
+    }
+
+    std::cout << "Array: \n";
+    std::cout << "{ ";
+    for(int i = 0; i < sz; i++)
+    {
+        std::cout << data[i];
+        if(i < sz - 1)
+        {
+            std::cout << " ";
+        }
+    }
+    std::cout << "}\n";
+}
+
 #endif

@@ -14,6 +14,7 @@ struct Task
     int arrivalTime;
     int burstTime;
     int deadline;
+
     void print() const
     {
         std::cout << "Task#" << id
@@ -23,6 +24,10 @@ struct Task
                   << " dead=" << deadline;
     }
 };
+
+Task inputTasks[100];
+Task finishedTasks[100]; 
+int finishedCount = 0;
 
 template<typename T, int MAX_SIZE = 1000005, typename Compare = std::less<T>>
 class HeapMaster
@@ -52,6 +57,7 @@ class HeapMaster
         
         bool decreaseKey(int index, const T& newVal);
         bool increaseKey(int index, const T& newVal);
+        void buildHeap(const T arr[], int n);
 
         void printHeap() const;
         void printArray() const;
